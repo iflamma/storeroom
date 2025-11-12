@@ -1,10 +1,9 @@
-[Plugin]
-name = 番茄小说广告屏蔽去短剧
-desc = 番茄小说广告屏蔽去短剧（未完成版），version = 0.1
-author = xhnmt
-version = 0.1
-category = AdBlock
-icon = https://raw.githubusercontent.com/xhnmt/fqnovel/master/icon.png
+#!name = 番茄小说广告屏蔽去短剧
+#!desc = 番茄小说广告屏蔽去短剧（未完成版），version = 0.1，移植自原作者xhnmt
+#!author = iflamma
+#!version = 0.1
+#!category = AdBlock
+#!icon = https://raw.githubusercontent.com/xhnmt/fqnovel/master/icon.png
 
 [Rule]
 DOMAIN,p6-ad-sign.byteimg.com,REJECT
