@@ -131,4 +131,4 @@ URL-REGEX,^http:\/\/.+\.byteimg\.com\/web\.business\.image,REJECT
 ^https?:\/\/.+\.snssdk.com\/api\/ad\/.+ reject
 
 [Mitm]
-hostname = *.pangolin-sdk-toutiao,*.pstatp.com,*.pglstatp-toutiao.com,gurd.snssdk.com,*default.ixigua.com
+hostname = %APPEND% *.pangolin-sdk-toutiao,*.pangolin-sdk-toutiao.*,*.pstatp.com,*.pstatp.com.*,*.pglstatp-toutiao.com.*,*.pglstatp-toutiao.com,gurd.snssdk.com,gurd.snssdk.com.*,*default.ixigua.com
