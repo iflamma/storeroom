@@ -2,14 +2,14 @@
 #!desc= 自用，移植自原作者xhnmt，原地址：https://github.com/xhnmt/fqnovel/blob/main/AD_fqnovel.module，整合部分可莉的番茄规则
 #App链接=https://apps.apple.com/app/id1468454200
 #!author=iflamma
-#!version = 0.1
+#!version = 0.2
 #!tag=去广告
 #!system=
 #!system_version=
 #!loon_version=3.3.5(904)
 #!homepage=https://github.com/iflamma/storeroom/blob/main/loon/AD_fqnovel.lpx
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DragonRead.png
-#!date=2025-11-12 13:19:37
+#!date=2025-11-28
 
 [Rule]
 DOMAIN,p6-ad-sign.byteimg.com,REJECT
