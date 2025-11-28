@@ -67,6 +67,8 @@ DOMAIN,minigame5-normal.zijieapi.com,REJECT
 DOMAIN,mssdk.zijieapi.com,REJECT
 DOMAIN,timon.zijieapi.com,REJECT
 DOMAIN,vcs.zijieapi.com,REJECT
+DOMAIN-SUFFIX,ecombdapi.com,REJECT
+DOMAIN-SUFFIX,ecombdimg.com,REJECT
 
 # 测试部分
 DOMAIN-KEYWORD,normal-lq.fqnovel.com,REJECT
@@ -91,6 +93,7 @@ DOMAIN,webcast5-core-lq.amemv.com,REJECT
 DOMAIN,webcast5-normal-hl.amemv.com,REJECT
 DOMAIN,webcast5-open-lq.douyin.com,REJECT
 
+
 # 新增短剧广告规则
 DOMAIN-SUFFIX,webcast-cdn-tos-ncdn.bytegecko.com,REJECT
 DOMAIN,lf-webcast-gr-sourcecdn.bytegecko.com,REJECT
@@ -111,11 +114,29 @@ IP-CIDR,218.94.207.205/32,REJECT,no-resolve
 IP-CIDR,117.92.229.188/32,REJECT,no-resolve
 IP-CIDR,101.36.166.16/32,REJECT,no-resolve
 IP-CIDR,180.96.2.114/32,REJECT,no-resolve
+IP-CIDR,117.167.107.56/32,REJECT,no-resolve
+IP-CIDR,117.167.107.54/32,REJECT,no-resolve
+IP-CIDR,117.167.107.56/32,REJECT,no-resolve
+IP-CIDR,117.167.111.191/32,REJECT,no-resolve
+IP-CIDR,117.169.97.216/32,REJECT,no-resolve
+IP-CIDR,117.169.106.240/32,REJECT,no-resolve
+IP-CIDR,117.169.114.254/32,REJECT,no-resolve
+IP-CIDR,120.232.220.219/32,REJECT,no-resolve
+IP-CIDR,120.233.202.25/32,REJECT,no-resolve
+IP-CIDR,120.233.80.195/32,REJECT,no-resolve
+
+# 好像会影响听书
+USER-AGENT,ttplayer*,REJECT
 
 # 正则拦截
 URL-REGEX,*-default.ixigua.com,REJECT
 URL-REGEX,^http:\/\/.+\.byteimg\.com\/ad-app-package,REJECT
 URL-REGEX,^http:\/\/.+\.byteimg\.com\/web\.business\.image,REJECT
+URL-REGEX,^https?:\/\/.*(pull-flv)+.*\.douyincdn\.com\/stage\/stream(\/.+)?,REJECT
+URL-REGEX,^https?:\/\/.*(webcast)+.*\.douyinpic\.com(\/.+)?,REJECT
+URL-REGEX,^https?:\/\/.*(ad-sign)+.*\.byteimg\.com(\/.+)?,REJECT
+URL-REGEX,^https?:\/\/.*(webcast)+.*\.douyinstatic\.com(\/.+)?,REJECT
+URL-REGEX,^https?:\/\/.*(aio)+.*\.ecombdimg\.com(\/.+)?,REJECT
 
 [Rewrite]
 ^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/ reject
@@ -129,6 +150,11 @@ URL-REGEX,^http:\/\/.+\.byteimg\.com\/web\.business\.image,REJECT
 ^https?:\/\/.+\.pstatp\.com\/bytecom\/resource\/track_log\/src\/.+ reject
 ^https?:\/\/.+\.snssdk\.com\/video\/play\/1\/toutiao\/.+\/mp4 reject
 ^https?:\/\/.+\.snssdk.com\/api\/ad\/.+ reject
+
+^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(ad-app-package|ad)\/.+ _ reject
+^https?:\/\/adim\.pinduoduo\.com\/.+\/toutiao\?.+ _ reject
+^https?:\/\/v(\d)+-novelapp\.fqnovelvod\.com\/.+\/video\/.+ _ reject
+^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/obj\/ad-site-adstyle-public\/.+ _ reject
 
 [Mitm]
 hostname = %APPEND% *.pangolin-sdk-toutiao,*.pangolin-sdk-toutiao.*,*.pstatp.com,*.pstatp.com.*,*.pglstatp-toutiao.com.*,*.pglstatp-toutiao.com,gurd.snssdk.com,gurd.snssdk.com.*,*default.ixigua.com
