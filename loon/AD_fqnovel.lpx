@@ -1,7 +1,7 @@
 #!name=番茄小说广告屏蔽去短剧
 #!desc= 自用，移植自https://github.com/xhnmt/fqnovel/blob/main/AD_fqnovel.module，原作者xhnmt，version = 0.1
 #!author=iflamma
-#!date=2025-12-15(1)
+#!date=2025-12-15(2)
 
 [Rule]
 # 域名拦截
@@ -60,10 +60,10 @@ DOMAIN,webcast5-open-lq.douyin.com,REJECT
 DOMAIN,zlink.ugsdk.cn,REJECT
 
 
-# 新增短剧广告规则（批量检查已修正）
+# 新增短剧广告规则
 DOMAIN-SUFFIX,bytegecko.com,REJECT # 已包含在前面的规则中
 DOMAIN,lf-webcast-gr-sourcecdn.bytegecko.com,REJECT
-DOMAIN-SUFFIX,douyinpic.com,REJECT # Surge的p*.douyinpic.com转为DOMAIN-SUFFIX, douyinpic.com
+DOMAIN-SUFFIX,douyinpic.com,REJECT
 DOMAIN-KEYWORD,lq.ecombdapi.com,REJECT
 DOMAIN-KEYWORD,reading-video.fqnovelvod.com,REJECT
 DOMAIN-SUFFIX,misc-lq.fqnovel.com,REJECT
