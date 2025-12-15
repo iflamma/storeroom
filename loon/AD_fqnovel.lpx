@@ -1,10 +1,10 @@
 #!name=番茄小说广告屏蔽去短剧
 #!desc= 自用，移植自https://github.com/xhnmt/fqnovel/blob/main/AD_fqnovel.module，原作者xhnmt，version = 0.1
 #!author=iflamma
-#!date=2025-12-15
+#!date=2025-12-15(1)
 
 [Rule]
-# 域名拦截 (DOMAIN, DOMAIN-SUFFIX, DOMAIN-KEYWORD)
+# 域名拦截
 DOMAIN,p6-ad-sign.byteimg.com,REJECT
 DOMAIN,p9-ad-sign.byteimg.com,REJECT
 DOMAIN,i.snssdk.com,REJECT
@@ -88,43 +88,18 @@ URL-REGEX,^http:\/\/.+\.byteimg\.com\/web\.business\.image,REJECT
 
 
 [Rewrite]
-# Surge的 https://ahrefs.com/writing-tools/paragraph-rewriter 对应 Loon 的 [Rewrite]
-# 格式：^URL 正则表达式   替换目标     类型
-# Surge: ^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/ _ reject
 ^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/   -   reject-200
-
-# Surge: ^https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/toutiao\.mp4 _ reject
 ^https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/toutiao\.mp4   -   reject-200
-
-# Surge: ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/(ad-app-package|ad)\/.+ _ reject
 ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/(ad-app-package|ad)\/.+   -   reject-200
-
-# Surge: ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/web\.business\.image\/.+ _ reject
 ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/web\.business\.image\/.+   -   reject-200
-
-# Surge: ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/obj\/ad-pattern\/renderer _ reject
 ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/obj\/ad-pattern\/renderer   -   reject-200
-
-# Surge: ^https?:\/\/gurd\.snssdk\.com\/src\/server\/v3\/package _ reject
 ^https?:\/\/gurd\.snssdk\.com\/src\/server\/v3\/package   -   reject-200
-
-# Surge: ^https?:\/\/.+\.byteimg.com\/tos-cn-i-1yzifmftcy\/(.+)-jpeg\.jpeg _ reject
 ^https?:\/\/.+\.byteimg.com\/tos-cn-i-1yzifmftcy\/(.+)-jpeg\.jpeg   -   reject-200
-
-# Surge: ^https?:\/\/.+\.pstatp\.com\/obj\/mosaic-legacy\/.+\?from\=ad _ reject
 ^https?:\/\/.+\.pstatp\.com\/obj\/mosaic-legacy\/.+\?from\=ad   -   reject-200
-
-# Surge: ^https?:\/\/.+\.pstatp\.com\/bytecom\/resource\/track_log\/src\/.+ _ reject
 ^https?:\/\/.+\.pstatp\.com\/bytecom\/resource\/track_log\/src\/.+   -   reject-200
-
-# Surge: ^https?:\/\/.+\.snssdk\.com\/video\/play\/1\/toutiao\/.+\/mp4 _ reject
 ^https?:\/\/.+\.snssdk\.com\/video\/play\/1\/toutiao\/.+\/mp4   -   reject-200
-
-# Surge: ^https?:\/\/.+\.snssdk.com\/api\/ad\/.+ _ reject
 ^https?:\/\/.+\.snssdk.com\/api\/ad\/.+   -   reject-200
 
 
 [MITM]
-# Surge的hostname = %APPEND% 对应 Loon 的 hostname = 
-# Loon 的 hostname 只需要列出域名，不需要通配符 *.*
 hostname = *.pangolin-sdk-toutiao.com, *.pstatp.com, *.pglstatp-toutiao.com, gurd.snssdk.com, *default.ixigua.com
