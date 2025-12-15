@@ -1,17 +1,11 @@
-#!name=番茄小说去广告
-#!desc= 自用，移植自原作者xhnmt，原地址：https://github.com/xhnmt/fqnovel/blob/main/AD_fqnovel.module，整合部分可莉的番茄规则
-#App链接=https://apps.apple.com/app/id1468454200
+#!url=https://raw.githubusercontent.com/xhnmt/fqnovel/master/AD_fqnovel_Loon.plugin
+#!name=番茄小说广告屏蔽去短剧 (Loon)
+#!desc= 自用，移植自https://github.com/xhnmt/fqnovel/blob/main/AD_fqnovel.module，原作者xhnmt，version = 0.1
 #!author=iflamma
-#!version = 0.2
-#!tag=去广告
-#!system=
-#!system_version=
-#!loon_version=3.3.5(904)
-#!homepage=https://github.com/iflamma/storeroom/blob/main/loon/AD_fqnovel.lpx
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DragonRead.png
-#!date=2025-11-28
+#!date=2025-12-15
 
 [Rule]
+# 域名拦截 (DOMAIN, DOMAIN-SUFFIX, DOMAIN-KEYWORD)
 DOMAIN,p6-ad-sign.byteimg.com,REJECT
 DOMAIN,p9-ad-sign.byteimg.com,REJECT
 DOMAIN,i.snssdk.com,REJECT
@@ -29,53 +23,24 @@ DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,REJECT
 DOMAIN,api.iegadp.qq.com,REJECT
 DOMAIN,sf3-ttcdn-tos.pstatp.com,REJECT
 DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
-DOMAIN,*default.ixigua.com,REJECT
+DOMAIN-KEYWORD,default.ixigua.com,REJECT
 DOMAIN,v6-novelapp.ixigua.com,REJECT
-DOMAIN,*novelapp.ixigua.com,REJECT
+DOMAIN-KEYWORD,novelapp.ixigua.com,REJECT
 DOMAIN-SUFFIX,byteorge.com,REJECT
 DOMAIN-SUFFIX,bytegoofy.com,REJECT
 DOMAIN-SUFFIX,bytedance.com,REJECT
+#DOMAIN-SUFFIX,ecombdimg.com,REJECT
 DOMAIN-SUFFIX,bytegecko.com,REJECT
-DOMAIN,mon.toutiaocloud.net,REJECT
-DOMAIN,lf-normal-gr-sourcecdn.bytegecko.com,REJECT
-DOMAIN,zlink.ugsdk.cn,REJECT
-DOMAIN,p3-developer.bytemaimg.com,REJECT
-DOMAIN,webcast-open.douyin.com,REJECT
-DOMAIN,p11-webcast-sign.douyinpic.com,REJECT
-DOMAIN,p3-webcast-sign.douyinpic.com,REJECT
-DOMAIN,log3-applog.fqnovel.com,REJECT
-DOMAIN,log5-applog.fqnovel.com,REJECT
-DOMAIN,mon11-misc-lq.fqnovel.com,REJECT
-DOMAIN,mon11-misc.fqnovel.com,REJECT
-DOMAIN,mon3-misc.fqnovel.com,REJECT
-DOMAIN,rtlog3-applog.fqnovel.com,REJECT
-DOMAIN,rtlog5-applog.fqnovel.com,REJECT
-DOMAIN,effect.snssdk.com,REJECT
-DOMAIN,is-lq.snssdk.com,REJECT
-DOMAIN,security.snssdk.com,REJECT
-DOMAIN,vas.snssdk.com,REJECT
-DOMAIN,mon.toutiaocloud.com,REJECT
-DOMAIN,abtest3-misc.zijieapi.com,REJECT
-DOMAIN,ads3-normal.zijieapi.com,REJECT
-DOMAIN,ads5-normal.zijieapi.com,REJECT
-DOMAIN,feedback-c.zijieapi.com,REJECT
-DOMAIN,gecko3.zijieapi.com,REJECT
-DOMAIN,gecko5.zijieapi.com,REJECT
-DOMAIN,ma.zijieapi.com,REJECT
-DOMAIN,minigame3-normal.zijieapi.com,REJECT
-DOMAIN,minigame5-normal.zijieapi.com,REJECT
-DOMAIN,mssdk.zijieapi.com,REJECT
-DOMAIN,timon.zijieapi.com,REJECT
-DOMAIN,vcs.zijieapi.com,REJECT
-DOMAIN-SUFFIX,ecombdapi.com,REJECT
-DOMAIN-SUFFIX,ecombdimg.com,REJECT
 
-# 测试部分
+
+#测试
 DOMAIN-KEYWORD,normal-lq.fqnovel.com,REJECT
 DOMAIN,aweme.snssdk.com,REJECT
 DOMAIN,ec5-core-hl.ecombdapi.com,REJECT
 DOMAIN,ecom5-normal-hl.ecombdapi.com,REJECT
+DOMAIN,effect.snssdk.com,REJECT
 DOMAIN,frontier100-toutiao-hl.fqnovel.com,REJECT
+DOMAIN,is-lq.snssdk.com,REJECT
 DOMAIN,lf3-reading.fqnovelpic.com,REJECT
 DOMAIN,lf3-static.bytednsdoc.com,REJECT
 DOMAIN,log-hl.snssdk.com,REJECT
@@ -87,74 +52,80 @@ DOMAIN,sdk.open.extension.getui.com,REJECT
 DOMAIN,tnc3-bjlgy.snssdk.com,REJECT
 DOMAIN,v9-novelapp.fqnovelvod.com,REJECT
 DOMAIN,vas-lf-x.snssdk.com,REJECT
+DOMAIN,vas.snssdk.com,REJECT
 DOMAIN,vc-brain-v6.ndcpp.com,REJECT
 DOMAIN,vc-brain.ndcpp.com,REJECT
 DOMAIN,webcast5-core-lq.amemv.com,REJECT
 DOMAIN,webcast5-normal-hl.amemv.com,REJECT
 DOMAIN,webcast5-open-lq.douyin.com,REJECT
+DOMAIN,zlink.ugsdk.cn,REJECT
 
 
-# 新增短剧广告规则
-DOMAIN-SUFFIX,webcast-cdn-tos-ncdn.bytegecko.com,REJECT
+# 新增短剧广告规则（批量检查已修正）
+DOMAIN-SUFFIX,bytegecko.com,REJECT # 已包含在前面的规则中
 DOMAIN,lf-webcast-gr-sourcecdn.bytegecko.com,REJECT
-DOMAIN-SUFFIX,p*.douyinpic.com,REJECT
+DOMAIN-SUFFIX,douyinpic.com,REJECT # Surge的p*.douyinpic.com转为DOMAIN-SUFFIX, douyinpic.com
 DOMAIN-KEYWORD,lq.ecombdapi.com,REJECT
 DOMAIN-KEYWORD,reading-video.fqnovelvod.com,REJECT
 DOMAIN-SUFFIX,misc-lq.fqnovel.com,REJECT
 DOMAIN-KEYWORD,misc-lq.fqnovel.com,REJECT
-DOMAIN-KEYWORD,mon*-misc-*.fqnovel.com,REJECT
-URL-REGEX,^https?:\/\/mon.*-misc-.*\.fqnovel\.com,REJECT
-URL-REGEX,^https?:\/\/mon*-misc-*\.fqnovel\.com,REJECT
+DOMAIN-KEYWORD,mon-misc-.fqnovel.com,REJECT # 转换为更通用的 KEYWORD 匹配
+URL-REGEX,^https?:\/\/mon.*-misc-.*\.fqnovel\.com,REJECT # 保留原始URL-REGEX
+URL-REGEX,^https?:\/\/mon*-misc-*\.fqnovel\.com,REJECT # 保留原始URL-REGEX
 DOMAIN-KEYWORD,applog-lq.fqnovel.com,REJECT
 
-# IP 拦截
+# IP拦截
 IP-CIDR,49.71.37.101/32,REJECT,no-resolve
 IP-CIDR,117.71.105.23/32,REJECT,no-resolve
 IP-CIDR,218.94.207.205/32,REJECT,no-resolve
 IP-CIDR,117.92.229.188/32,REJECT,no-resolve
 IP-CIDR,101.36.166.16/32,REJECT,no-resolve
 IP-CIDR,180.96.2.114/32,REJECT,no-resolve
-IP-CIDR,117.167.107.56/32,REJECT,no-resolve
-IP-CIDR,117.167.107.54/32,REJECT,no-resolve
-IP-CIDR,117.167.107.56/32,REJECT,no-resolve
-IP-CIDR,117.167.111.191/32,REJECT,no-resolve
-IP-CIDR,117.169.97.216/32,REJECT,no-resolve
-IP-CIDR,117.169.106.240/32,REJECT,no-resolve
-IP-CIDR,117.169.114.254/32,REJECT,no-resolve
-IP-CIDR,120.232.220.219/32,REJECT,no-resolve
-IP-CIDR,120.233.202.25/32,REJECT,no-resolve
-IP-CIDR,120.233.80.195/32,REJECT,no-resolve
-
-# 好像会影响听书
-USER-AGENT,ttplayer*,REJECT
 
 # 正则拦截
 URL-REGEX,*-default.ixigua.com,REJECT
 URL-REGEX,^http:\/\/.+\.byteimg\.com\/ad-app-package,REJECT
 URL-REGEX,^http:\/\/.+\.byteimg\.com\/web\.business\.image,REJECT
-URL-REGEX,^https?:\/\/.*(pull-flv)+.*\.douyincdn\.com\/stage\/stream(\/.+)?,REJECT
-URL-REGEX,^https?:\/\/.*(webcast)+.*\.douyinpic\.com(\/.+)?,REJECT
-URL-REGEX,^https?:\/\/.*(ad-sign)+.*\.byteimg\.com(\/.+)?,REJECT
-URL-REGEX,^https?:\/\/.*(webcast)+.*\.douyinstatic\.com(\/.+)?,REJECT
-URL-REGEX,^https?:\/\/.*(aio)+.*\.ecombdimg\.com(\/.+)?,REJECT
+
 
 [Rewrite]
-^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/ reject
-^https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/toutiao\.mp4 reject
-^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/(ad-app-package|ad)\/.+ reject
-^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/web\.business\.image\/.+ reject
-^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/obj\/ad-pattern\/renderer reject
-^https?:\/\/gurd\.snssdk\.com\/src\/server\/v3\/package reject
-^https?:\/\/.+\.byteimg.com\/tos-cn-i-1yzifmftcy\/(.+)-jpeg\.jpeg reject
-^https?:\/\/.+\.pstatp\.com\/obj\/mosaic-legacy\/.+\?from\=ad reject
-^https?:\/\/.+\.pstatp\.com\/bytecom\/resource\/track_log\/src\/.+ reject
-^https?:\/\/.+\.snssdk\.com\/video\/play\/1\/toutiao\/.+\/mp4 reject
-^https?:\/\/.+\.snssdk.com\/api\/ad\/.+ reject
+# Surge的 https://ahrefs.com/writing-tools/paragraph-rewriter 对应 Loon 的 [Rewrite]
+# 格式：^URL 正则表达式   替换目标     类型
+# Surge: ^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/ _ reject
+^https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/   -   reject-200
 
-^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(ad-app-package|ad)\/.+ _ reject
-^https?:\/\/adim\.pinduoduo\.com\/.+\/toutiao\?.+ _ reject
-^https?:\/\/v(\d)+-novelapp\.fqnovelvod\.com\/.+\/video\/.+ _ reject
-^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/obj\/ad-site-adstyle-public\/.+ _ reject
+# Surge: ^https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/toutiao\.mp4 _ reject
+^https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/toutiao\.mp4   -   reject-200
 
-[Mitm]
-hostname = %APPEND% *.pangolin-sdk-toutiao,*.pangolin-sdk-toutiao.*,*.pstatp.com,*.pstatp.com.*,*.pglstatp-toutiao.com.*,*.pglstatp-toutiao.com,gurd.snssdk.com,gurd.snssdk.com.*,*default.ixigua.com
+# Surge: ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/(ad-app-package|ad)\/.+ _ reject
+^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/(ad-app-package|ad)\/.+   -   reject-200
+
+# Surge: ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/web\.business\.image\/.+ _ reject
+^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/web\.business\.image\/.+   -   reject-200
+
+# Surge: ^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/obj\/ad-pattern\/renderer _ reject
+^https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/obj\/ad-pattern\/renderer   -   reject-200
+
+# Surge: ^https?:\/\/gurd\.snssdk\.com\/src\/server\/v3\/package _ reject
+^https?:\/\/gurd\.snssdk\.com\/src\/server\/v3\/package   -   reject-200
+
+# Surge: ^https?:\/\/.+\.byteimg.com\/tos-cn-i-1yzifmftcy\/(.+)-jpeg\.jpeg _ reject
+^https?:\/\/.+\.byteimg.com\/tos-cn-i-1yzifmftcy\/(.+)-jpeg\.jpeg   -   reject-200
+
+# Surge: ^https?:\/\/.+\.pstatp\.com\/obj\/mosaic-legacy\/.+\?from\=ad _ reject
+^https?:\/\/.+\.pstatp\.com\/obj\/mosaic-legacy\/.+\?from\=ad   -   reject-200
+
+# Surge: ^https?:\/\/.+\.pstatp\.com\/bytecom\/resource\/track_log\/src\/.+ _ reject
+^https?:\/\/.+\.pstatp\.com\/bytecom\/resource\/track_log\/src\/.+   -   reject-200
+
+# Surge: ^https?:\/\/.+\.snssdk\.com\/video\/play\/1\/toutiao\/.+\/mp4 _ reject
+^https?:\/\/.+\.snssdk\.com\/video\/play\/1\/toutiao\/.+\/mp4   -   reject-200
+
+# Surge: ^https?:\/\/.+\.snssdk.com\/api\/ad\/.+ _ reject
+^https?:\/\/.+\.snssdk.com\/api\/ad\/.+   -   reject-200
+
+
+[MITM]
+# Surge的hostname = %APPEND% 对应 Loon 的 hostname = 
+# Loon 的 hostname 只需要列出域名，不需要通配符 *.*
+hostname = *.pangolin-sdk-toutiao.com, *.pstatp.com, *.pglstatp-toutiao.com, gurd.snssdk.com, *default.ixigua.com
